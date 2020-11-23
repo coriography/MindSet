@@ -1,0 +1,92 @@
+<!--
+reverse layout to make it clear what the home screen is
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>MindSet - find your positive thought</title>
+    <meta name="description" content="positive affirmation generator">
+    <meta name="author" content="Cori Lint">
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body id="body">
+
+    <!--Affirmation screen-->
+    <div id="affirmation" class="overlay">
+        <div class="container">
+            <div class="nav">
+                <a href="#" id="goToAff" onclick="goToCats()">
+                    <h5>back to categories
+                    </h5>
+                </a>
+                <a href="#" id="goToHowTo" onclick="goToHowTo()">
+                    <h5>how to use affirmations</h5>
+                </a>
+            </div>
+            <div class="aff-container" id="aff-container">
+                <h3 id="affCat">Here too?
+                </h3>
+                <p class="aff-text" id="affText">Why do I have to have initial text here?
+                </p>
+                <a class="another-one" type="button" onclick="generateNew()">
+                    <h4>another one</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Category screen-->
+    <div>
+        <div class="container">
+            <a href="#" onclick="goToAff()" id="affirmation">toggle</a>
+            <h1 class="title">MindSet</h1>
+            <p class="subtitle">find your positive thought</p>
+            <div id="catButtons" class="row">
+                <button type="button" class="cat-button" data-category="">
+                    <h2 class="cat-text"></h2>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--How-to screen-->
+    <div id="howTo" class="overlay">
+        <div class="container">
+            <div class="nav">
+                <a href="#" id="goToHowTo" onclick="goToCats()">
+                    <h5>back to categories
+                    </h5>
+                </a>
+                <a href="#" id="" onclick="goToAff()">
+                    <h5>back to affirmations</h5>
+                </a>
+            </div>
+            <h1>How to use positive affirmations</h1>
+            <div class="p-container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/main.js"></script>
+
+</body>
+
+</html>
