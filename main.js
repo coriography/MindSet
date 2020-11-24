@@ -1,9 +1,3 @@
-// TODO: maybe change button functions to actually assigning css styles within the javascript?
-// TODO: fix screen animation on refresh
-// TODO: comment all code, clean up current comments MAKE IT SNAPPY
-// TODO: check out innerHTML vs. textContent - different in some ways
-// TODO: clean up var vs. let
-
 // * GLOBAL FUNCTIONS AND VARIABLES //
 
 const body = document.getElementById("body");
@@ -74,7 +68,7 @@ var currentList = "";
 
 //A button that calls this function clears any open screens to reveal the categories screen.
 //It removes the body classes that control relevant animations.
-//It also resets the global variable that controls what category we're in.
+//It also clears the global variable that controls what category we're in.
 function goToCats() {
 	if (body.classList.contains("aff-open")) {
 		body.classList.remove("aff-open");
