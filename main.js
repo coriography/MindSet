@@ -7,7 +7,7 @@ const affScreen = document.getElementById("affirmation");
 var affirmations=[
 	{
 		category: "learning",
-		color: "#47682C",
+		color: "#3C6138",
 		strings: [
 			"learning string one My mind is open, my space is calm, and I can let go of all distractions.",
 			"learning string two",
@@ -25,7 +25,7 @@ var affirmations=[
 	},
 	{
 		category: "creativity",
-		color: "#390040",
+		color: "#392B58",
 		strings: [
 			"creativity string one",
 			"creativity string two",
@@ -43,7 +43,8 @@ var affirmations=[
 	},
 	{
 		category: "connection",
-		color: "#BA8F95",
+		color: "#8A6270",
+		strings: [
 			"connection string one",
 			"connection string two",
 			"connection string three"
