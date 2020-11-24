@@ -1,6 +1,5 @@
 /* 
 Change a.buttons to btn - including cat buttons?
-change this doc to scss/sass? review dat
 check out accessibility - specifically tab navigation to the button
 mobile!
 Tabbing/accessibility - blue outline on focus
@@ -17,13 +16,6 @@ Tabbing/accessibility - blue outline on focus
     transition-duration: .3s;
     transition-timing-function: ease;
 }
-
-/* *:focus {
-    outline-color: white;
-    outline-width: thin;
-    outline-style: solid;
-    outline-offset: 10px;
-}*/
 
 body {
     background-color: #d6d6d6;
@@ -45,7 +37,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 2rem;
 }
 
 .title {
@@ -101,6 +97,7 @@ button:hover {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    z-index: 1;
 }
 
 .nav {
