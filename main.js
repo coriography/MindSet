@@ -1,6 +1,7 @@
 // * GLOBAL FUNCTIONS AND VARIABLES //
 
 const body = document.getElementById("body");
+const affScreen = document.getElementById("affirmation");
 
 //Stores all affirmations in an array of objects organized by category
 var affirmations=[
@@ -15,7 +16,7 @@ var affirmations=[
 	},
 	{
 		category: "confidence",
-		color: "#BA8F95",
+		color: "#922D50",
 		strings: [
 			"confidence string one",
 			"confidence string two",
@@ -42,8 +43,7 @@ var affirmations=[
 	},
 	{
 		category: "connection",
-		color: "#922D50",
-		strings: [
+		color: "#BA8F95",
 			"connection string one",
 			"connection string two",
 			"connection string three"
@@ -63,13 +63,14 @@ var affirmations=[
 //Creates a global variable currentCat for "state", i.e. which category has been selected
 var currentCat = "";
 var currentList = "";
+var backgroundColor = "";
 
 // * NAVIGATION FUNCTIONS //
 
 //A button that calls this function clears any open screens to reveal the categories screen.
 //It removes the body classes that control relevant animations.
 //It also clears the global variable that controls what category we're in.
-function goToCats() {
+function animateCats() {
 	if (body.classList.contains("aff-open")) {
 		body.classList.remove("aff-open");
 	}
@@ -81,7 +82,7 @@ function goToCats() {
 
 //A button that calls this function clears any open screens and opens the affirmations screen.
 //It adds and removes the body classes that control relevant animations.
-function goToAff() {
+function animateAff() {
 	if (body.classList.contains("howto-open")) {
 		body.classList.remove("howto-open");
 	} 
@@ -90,7 +91,7 @@ function goToAff() {
 
 //A button that calls this function opens the how-to screen.
 //It adds the body class that controls relevant animations.
-function goToHowTo() {
+function animateHowTo() {
 	body.classList.add("howto-open");
 }
 
@@ -107,16 +108,22 @@ function generateNew() {
 }
 
 //Updates global variable, list of affirmations, and affirmation page heading based on button click
-// TODO: make updateCurrentCat() its own function and place it inside big-picture function!
-function updateCurrentCat(data) {
-	currentCat = data;
+function updateCurrentCat(cat, color) {
+	backgroundColor = color;
+	affScreen.style['background-color'] = backgroundColor;
+	currentCat = cat;
 	currentList = affirmations.filter(item => item.category == currentCat)[0];
 	var affCat = document.querySelector('#affCat');
 	var affHeading = `Positive affirmations for ${currentCat}`;
 	affCat.innerHTML = affHeading;
-	generateNew();
-	goToAff();
 }
+
+function selectCat(cat, color) {
+	animateAff();
+	updateCurrentCat(cat, color);
+	generateNew();
+}
+
 
 // * CATEGORIES (MAIN) SCREEN //
 
@@ -125,7 +132,7 @@ var catButtons = `
 	${affirmations
 		.filter(item => item.strings.length > 0)
 		.map(item => 
-			`<button type="button" id="${item.category}" class="cat-button" style="background-color: ${item.color}" onclick="updateCurrentCat('${item.category}')">
+			`<button type="button" id="${item.category}" class="cat-button" style="background-color: ${item.color}" onclick="selectCat('${item.category}', '${item.color}')">
 				<h3 class="cat-text">${item.category}</h3>
 			</button>
 			`)
@@ -135,15 +142,3 @@ var catButtons = `
 //Displays the button elements
 var catBtnContainer = document.querySelector('#catButtons');
 catBtnContainer.innerHTML = catButtons;
-
-
-// * AFFIRMATION SCREEN //
-
-// ? filter for current category and assign to new var
-// ? map over obj and format to just be array of strings?
-// ? then can use that index thingy
-
-
-
-
-
