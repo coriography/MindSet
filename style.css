@@ -160,6 +160,8 @@ body.howto-open #howTo {
     align-items: center;
 }
 
-.flex-container p {
+.flex-container p,
+.flex-container ol,
+.flex-container ul {
     max-width: 65%;
 }
