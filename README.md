@@ -10,4 +10,4 @@ To run locally, clone the repository to your machine and open in your browser.
 
 ## Credits :woman_technologist:
 
-Built by Cori Lint, with the help of https://www.freecodecamp.org/learn, https://wesbos.com/, and https://www.google.com/.
+Built by Cori Lint, with the help of [Free Code Camp](https://www.freecodecamp.org/learn), [Wes Bos](https://wesbos.com/), and [Google](http://google.com).
