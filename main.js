@@ -1,10 +1,14 @@
-// * GLOBAL FUNCTIONS AND VARIABLES //
+// * GLOBAL VARIABLES //
 
 const body = document.getElementById("body");
 const affScreen = document.getElementById("affirmation");
+const catBtnContainer = document.querySelector('#catButtons');
 
-//Stores all affirmations in an array of objects organized by category
-var affirmations=[
+//Creates global variable that controls state based on which category has been selected
+var currentList = "";
+
+//Stores all affirmations in array of objects organized by category
+const affirmations=[
 	{
 		category: "learning",
 		color: "#3C6138",
@@ -183,74 +187,9 @@ var affirmations=[
 	},
 ];
 
-//Creates a global variable currentCat for "state", i.e. which category has been selected
-var currentCat = "";
-var currentList = "";
-var backgroundColor = "";
-
-// * NAVIGATION FUNCTIONS //
-
-//A button that calls this function clears any open screens to reveal the categories screen.
-//It removes the body classes that control relevant animations.
-//It also clears the global variable that controls what category we're in.
-function animateCats() {
-	if (body.classList.contains("aff-open")) {
-		body.classList.remove("aff-open");
-	}
-	if (body.classList.contains("howto-open")) {
-		body.classList.remove("howto-open");
-	} 
-	currentCat = "";
-}
-
-//A button that calls this function clears any open screens and opens the affirmations screen.
-//It adds and removes the body classes that control relevant animations.
-function animateAff() {
-	if (body.classList.contains("howto-open")) {
-		body.classList.remove("howto-open");
-	} 
-	body.classList.add("aff-open");
-}
-
-//A button that calls this function opens the how-to screen.
-//It adds the body class that controls relevant animations.
-function animateHowTo() {
-	body.classList.add("howto-open");
-}
-
-function generateNew() {
-    //Generates a random index to retrieve a random affirmation from the list
-    let index = Math.floor(Math.random()*currentList.strings.length); 
-    
-    //Stores randomly generated affirmation in a variable
-	let currentAff = currentList.strings[index];
-	
-    //Finds HTML div with an ID of aff-text and sets its content to the affirmation variable
-    let affText = document.querySelector('#affText');
-	affText.innerHTML = currentAff;
-}
-
-//Updates global variable, list of affirmations, and affirmation page heading based on button click
-function updateCurrentCat(cat, color) {
-	backgroundColor = color;
-	affScreen.style['background-color'] = backgroundColor;
-	currentCat = cat;
-	currentList = affirmations.filter(item => item.category == currentCat)[0];
-	var affCat = document.querySelector('#affCat');
-	var affHeading = `Positive affirmations for ${currentCat}`;
-	affCat.innerHTML = affHeading;
-}
-
-function selectCat(cat, color) {
-	animateAff();
-	updateCurrentCat(cat, color);
-	generateNew();
-}
-
-
 // * CATEGORIES (MAIN) SCREEN //
 
-//Creates a button element for each item in the affirmations object where "strings" is not empty
+//Creates button element for each item in affirmations object where "strings" is not empty
 var catButtons = `
 	${affirmations
 		.filter(item => item.strings.length > 0)
@@ -263,5 +202,64 @@ var catButtons = `
 `;
 
 //Displays the button elements
-var catBtnContainer = document.querySelector('#catButtons');
 catBtnContainer.innerHTML = catButtons;
+
+
+
+// * NAVIGATION FUNCTIONS //
+
+//Calling this function clears any open screens to reveal categories screen.
+//It removes the body classes that control relevant animations.
+function animateCats() {
+	if (body.classList.contains("aff-open")) {
+		body.classList.remove("aff-open");
+	}
+	if (body.classList.contains("howto-open")) {
+		body.classList.remove("howto-open");
+	} 
+}
+
+//Calling this function clears any open screens and opens affirmations screen.
+//It adds and removes body classes that control relevant animations.
+function animateAff() {
+	if (body.classList.contains("howto-open")) {
+		body.classList.remove("howto-open");
+	} 
+	body.classList.add("aff-open");
+}
+
+//Calling this function opens how-to screen.
+//It adds the body class that controls relevant animations.
+function animateHowTo() {
+	body.classList.add("howto-open");
+}
+
+// * MORE FUNCTIONS //
+
+//Calling this function generates random affirmation in selected category
+function generateNew() {
+    //Generates random index based on length of selected category's array of strings
+    let index = Math.floor(Math.random()*currentList.strings.length); 
+    
+    //Stores randomly generated affirmation in a variable
+	let currentAff = currentList.strings[index];
+	
+    //Finds HTML div with ID of aff-text and sets its content to current affirmation
+    var affText = document.querySelector('#affText');
+	affText.innerHTML = currentAff;
+}
+
+//Updates global variable, list of affirmations, and affirmation page heading based on category selected
+function updateCurrentCat(cat, color) {
+	affScreen.style['background-color'] = color;
+	currentList = affirmations.filter(item => item.category == cat)[0];
+	var affCat = document.querySelector('#affCat');
+	var affHeading = `Positive affirmations for ${cat}`;
+	affCat.innerHTML = affHeading;
+}
+
+function selectCat(cat, color) {
+	animateAff();
+	updateCurrentCat(cat, color);
+	generateNew();
+}
