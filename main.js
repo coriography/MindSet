@@ -187,6 +187,7 @@ const affirmations=[
 	},
 ];
 
+
 // * CATEGORIES (MAIN) SCREEN //
 
 //Creates button element for each item in affirmations object where "strings" is not empty
@@ -203,7 +204,6 @@ var catButtons = `
 
 //Displays the button elements
 catBtnContainer.innerHTML = catButtons;
-
 
 
 // * NAVIGATION FUNCTIONS //
@@ -233,6 +233,7 @@ function animateAff() {
 function animateHowTo() {
 	body.classList.add("howto-open");
 }
+
 
 // * MORE FUNCTIONS //
 
