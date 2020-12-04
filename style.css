@@ -48,7 +48,14 @@ h3 {
     margin-bottom: 0;
 }
 
+@media screen and (max-width: 992px) {
+    .title {
+        margin-top: 0;
+    }
+}
+
 .subtitle {
+    margin-top: 0;
     margin-bottom: 3rem;
     font-size: 1.2rem;
 }
@@ -206,10 +213,6 @@ body.howto-open #howTo {
     flex-direction: column;
     align-items: center;
 }
-
-.howto-container h2.title {
-    margin-top: 0;
-} 
 
 .howto-container .subtitle {
     margin-bottom: 1rem;
