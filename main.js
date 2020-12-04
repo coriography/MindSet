@@ -255,7 +255,7 @@ function updateCurrentCat(cat, color) {
 	affScreen.style['background-color'] = color;
 	currentList = affirmations.filter(item => item.category == cat)[0];
 	var affCat = document.querySelector('#affCat');
-	var affHeading = `Positive affirmations for ${cat}`;
+	var affHeading = `${cat}`;
 	affCat.innerHTML = affHeading;
 }
 
