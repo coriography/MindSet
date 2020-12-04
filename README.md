@@ -4,8 +4,8 @@ MindSet is a mobile-responsive web app to help the user find and use positive af
 
 MindSet was built without frameworks, libraries, plugins, or pre-processors, just for fun. :sparkles:
 
-![app screenshot](/img/1.png)
-![app screenshot](/img/2.png)
+![app screenshot](img/1.png)
+![app screenshot](img/2.png)
 
 ## Usage :desktop_computer:	
 
