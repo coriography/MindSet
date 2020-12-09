@@ -1,5 +1,6 @@
 function logResult(result) {
 	console.log(result);
+	createCatButtons(result);
 }
 
 function logError(error) {
@@ -18,10 +19,10 @@ function readResponseAsJSON(response) {
 }
 
 function fetchJSON(pathToResource) {
-	fetch(pathToResource) // 1
-	.then(validateResponse) // 2
-	.then(readResponseAsJSON) // 3
-	.then(logResult) // 4
+	fetch(pathToResource)
+	.then(validateResponse)
+	.then(readResponseAsJSON)
+	.then(logResult)
 	.catch(logError);
 }
 
@@ -220,19 +221,33 @@ const affirmations=[
 // * CATEGORIES (MAIN) SCREEN //
 
 //Creates button element for each item in affirmations object where "strings" is not empty
-var catButtons = `
-	${affirmations
-		.filter(item => item.strings.length > 0)
-		.map(item => 
-			`<button type="button" id="${item.category}" class="cat-button" style="background-color: ${item.color}" onclick="selectCat('${item.category}', '${item.color}')">
-				<h3 class="cat-text">${item.category}</h3>
-			</button>
-			`)
-		.join('')}
-`;
+var catButtons = "";
+var categories = [];
 
-//Displays the button elements
-catBtnContainer.innerHTML = catButtons;
+function createCatButtons(result) {
+	//console.log(result[0]["color"]);
+	//console.log(result.filter(item => item["category"] == 'learning'));
+	//console.log(result.filter(item => item["strings"].length > 0));
+	// categories = result.map(item => item["category"]);
+	// console.log(categories);
+	// console.log(JSON.stringify(result[0]["category"]));
+	// console.log(result[0]["category"]);
+	//JSON.stringify(result);
+	catButtons = `
+		${result
+			.filter(item => item["strings"].length > 0)
+			.map(item => 
+				`<button type="button" id="${item["category"]}" class="cat-button" style="background-color: ${item["color"]}" onclick="selectCat('${item["category"]}', '${item["color"]}')">
+					<h3 class="cat-text">${item["category"]}</h3>
+				</button>
+				`)
+			.join('')
+		}
+	`;
+
+	//Displays the button elements
+	catBtnContainer.innerHTML = catButtons;
+}
 
 
 // * NAVIGATION FUNCTIONS //
