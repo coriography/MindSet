@@ -2,8 +2,11 @@
 
 MindSet is a mobile-responsive web app to help the user find and use positive affirmations. The user selects the category of affirmation they want to see, and a random affirmation in that category is generated. The app also includes instructions and background on using positive affirmations.
 
+MindSet was built with JavaScript, CSS, and HTML on the front end, and Node, Express, and Javascript on the back end.
+
 ![app screenshot](img/1.png)
 ![app screenshot](img/2.png)
+
 
 ## Usage :desktop_computer:
 
@@ -24,10 +27,12 @@ $ npm start
 ## Roadmap :blue_car:
 
 Updates coming soon:
+
 1. Set up a database to store the affirmations
-2. Create post, update, and delete methods for the data
-3. Build an interface to handle data input
+2. Refactor data fetch as post method
+3. Add post, update, and delete methods for the data
+4. Build an interface to handle data input
 
-## Authors and acknowldegements :woman_technologist:
+## Authors and acknowledgements :woman_technologist:
 
-Built by Cori Lint, with the help of [Free Code Camp](https://www.freecodecamp.org/learn), [Wes Bos](https://wesbos.com/), [Joey Lee](https://github.com/joeyklee/simple-express-api) and [Google Developers](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api)
+Built by [Cori Lint](https://github.com/coriography), with the help of [Free Code Camp](https://www.freecodecamp.org/learn), [Wes Bos](https://wesbos.com/), [Joey Lee](https://github.com/joeyklee/simple-express-api) and [Google Developers](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api)
