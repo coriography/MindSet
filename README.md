@@ -26,10 +26,10 @@ $ npm start
 
 ## Roadmap :blue_car:
 
-Updates coming soon:
+Up next:
 
 1. Set up a database to store the affirmations
-2. Refactor data fetch as post method
+2. Refactor data fetch as get method
 3. Add post, update, and delete methods for the data
 4. Build an interface to handle data input
 
