@@ -246,10 +246,13 @@ body.howto-open #howTo {
 
 ul.sources li {
     list-style: none;
-    color: #50808E;
 }
 
 li {
     list-style-position: inside;
     margin-bottom: .6rem;
+}
+
+.teal-link {
+    color: #50808E;
 }
