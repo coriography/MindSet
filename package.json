@@ -1,0 +1,27 @@
+{
+  "name": "mindset_package",
+  "version": "1.0.0",
+  "description": "A simple Express API for the MindSet app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coriography/mindset.git"
+  },
+  "author": "Cori Lint",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coriography/mindset/issues"
+  },
+  "homepage": "https://github.com/coriography/mindset#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
