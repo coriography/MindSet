@@ -2,7 +2,7 @@
 
 MindSet is a mobile-responsive web app to help the user find and use positive affirmations. The user selects the category of affirmation they want to see, and a random affirmation in that category is generated. The app also includes instructions and background on using positive affirmations.
 
-MindSet was built with JavaScript, CSS, and HTML on the front end, and Node, Express, and Javascript on the back end.
+MindSet was built with HTML, CSS, JavaScript, Node.js, and Express.
 
 ![app screenshot](img/1.png)
 ![app screenshot](img/2.png)
