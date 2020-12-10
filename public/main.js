@@ -1,7 +1,10 @@
 var jsonData;
 
 function logResult(result) {
+	//Calls function that generates and displays buttons on main screen
 	createCatButtons(result);
+
+	//Sends data to global variable for access in updateCurrentCat()
 	jsonData = result;
 }
 
@@ -47,14 +50,6 @@ var catButtons = "";
 var categories = [];
 
 function createCatButtons(result) {
-	//console.log(result[0]["color"]);
-	//console.log(result.filter(item => item["category"] == 'learning'));
-	//console.log(result.filter(item => item["strings"].length > 0));
-	// categories = result.map(item => item["category"]);
-	// console.log(categories);
-	// console.log(JSON.stringify(result[0]["category"]));
-	// console.log(result[0]["category"]);
-	//JSON.stringify(result);
 
 	//Creates button element for each item in affirmations object where "strings" is not empty
 	catButtons = `
